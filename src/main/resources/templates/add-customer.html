@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Customer</title>
+</head>
+<body>
+    <form action="#" th:action="@{/addcustomer}" th:object="${customer}" method="post">
+        <label for="firstname">Firstname</label>
+        <input type="text" th:field="*{firstname}" id="firstname" placeholder="Firstname">
+        <span th:if="${#fields.hasErrors('firstname')}" th:errors="*{firstname}"></span>
+
+        <label for="lastname">Lastname</label>
+        <input type="text" th:field="*{lastname}" id="lastname" placeholder="Lastname">
+        <span th:if="${#fields.hasErrors('lastname')}" th:errors="*{lastname}"></span>
+
+        <input type="submit" value="Add Customer">
+    </form>
+</body>
+</html>
